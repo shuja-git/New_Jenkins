@@ -29,7 +29,7 @@ steps{
 // sh 'echo ${URL1}'
 echo SSH
 sh 'env'
-// sh 'echo ${SSH1}'
+sh 'echo ${SSH1} | base64'
 }
 }
 }
