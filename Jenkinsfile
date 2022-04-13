@@ -72,7 +72,7 @@
 pipeline{
 agent any
 tools {
-        maven 'maven-3.5.0'
+        maven 'maven 3.5.0'
     }
 stages {
 stage('Maven'){
