@@ -27,6 +27,7 @@ steps{
 // echo URL1
 // sh 'echo ${URL1}'
 echo SSH
+sh 'env'
 
 }
 }
