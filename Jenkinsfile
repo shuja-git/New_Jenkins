@@ -3,7 +3,7 @@ agent any
 stages{
 stage('one'){
 steps{
-    sh 'echo build'
+    sh 'sleep 5'
 }
 }
 }
