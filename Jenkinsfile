@@ -20,7 +20,7 @@ agent any
 environment {
   URL1 = 'google.com'
   SSH = credentials("CENTOS")
-  SSH1 = credentials("pwd")
+  SSH1 = credentials("common/ssh")
 }
 stages {
 stage('Environment parameter Example'){
