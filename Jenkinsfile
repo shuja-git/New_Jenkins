@@ -1,10 +1,31 @@
-pipeline {
+//  options example
+//-------------------
+// pipeline {
+// agent any
+// options { disableConcurrentBuilds() }
+// stages{
+// stage('one'){
+// steps{
+//     sh 'sleep 5'
+// }
+// }
+// }
+// }
+
+//-----------------------------------
+// Environment Example
+//-----------------------------------
+pipeline{
 agent any
-options { disableConcurrentBuilds() }
-stages{
-stage('one'){
+environment {
+  URL1 = 'google.com'
+}
+stages {
+stage('Environment parameter Example'){
 steps{
-    sh 'sleep 5'
+echo URL1
+sh '${URL1}'
+
 }
 }
 }
