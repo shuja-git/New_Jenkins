@@ -24,7 +24,7 @@ stages {
 stage('Environment parameter Example'){
 steps{
 echo URL1
-sh '${URL1}'
+sh 'echo ${URL1}'
 
 }
 }
