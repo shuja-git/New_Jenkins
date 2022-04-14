@@ -86,23 +86,51 @@
 // --------------------------------------------------
 // input example
 //---------------------------------------------------
-pipeline {
-    agent any
-    stages {
-        stage('Example') {
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "shuja,bob"
-                parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                }
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Example') {
+//             input {
+//                 message "Should we continue?"
+//                 ok "Yes, we should."
+//                 submitter "shuja,bob"
+//                 parameters {
+//                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+//                 }
+//             }
+//             steps {
+//                 echo "Hello, ${PERSON}, nice to meet you."
+//             }
+//         }
+//     }
+// }
+// ------------------------
+// when condition example
+// ---------------------------
+pipeline{
+agent any
+parameters {
+choice(name: 'ENV', choices: ['DEV', 'PROD'], description: 'Choose Env')
+}
+stages{
+stage('DEV'){
+when {
+        environment name: 'ENV', value: 'DEV'
             }
-            steps {
-                echo "Hello, ${PERSON}, nice to meet you."
+steps{
+   echo 'DEV'
+}
+}
+stage('PROD'){
+when {
+        environment name: 'ENV', value: 'PROD'
             }
-        }
-    }
+
+steps{
+ echo 'PROD'
+}
+}
+}
 }
 
 
