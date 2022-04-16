@@ -14,12 +14,7 @@ def call() {
             }
 
             stage('Code Chek'){
-                steps{
-                    script{
-                 common.SonarQube()
-                    }
 
-                }
             }
             stage('Link Check'){
                 steps{
