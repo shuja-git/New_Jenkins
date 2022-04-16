@@ -15,17 +15,18 @@ def call() {
 
         stages {
 
-            stage('Compile Code'){
-                steps{
-                    sh 'echo Compile "${COMPONENT}" Code'
-                }
-            }
 
             stage('Code Chek'){
                 steps{
                     sh 'echo "${COMPONENT}" Code check'
                 }
             }
+            stage('Link Check'){
+                steps{
+                    sh 'echo "${COMPONENT}" Link Check'
+                }
+            }
+
 
             stage('Test Cases'){
                 steps{
@@ -35,6 +36,12 @@ def call() {
 
 
         }
+        post {
+            always {
+                cleanWs()
+            }
+        }
+
     }
 
 

@@ -18,6 +18,11 @@ def call() {
                     sh 'echo "${COMPONENT}" Code check'
                 }
             }
+            stage('Link Check'){
+                steps{
+                    sh 'echo "${COMPONENT}" Link Check'
+                }
+            }
 
             stage('Test Cases'){
                 steps{
@@ -27,6 +32,12 @@ def call() {
 
 
         }
+        post {
+            always {
+                cleanWs()
+            }
+        }
+
     }
 
 
