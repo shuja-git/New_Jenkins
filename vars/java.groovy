@@ -16,7 +16,7 @@ def call() {
             stage('Code Chek'){
                 steps{
                     script{
-                 common.SonarQube("shipping","java")
+                 common.SonarQube()
                     }
 
                 }
