@@ -9,7 +9,7 @@ def call() {
 
             stage('Compile Code'){
                 steps{
-                    sh 'echo Compile "${COMPONENT}" Code'
+                    sh 'mvn compile'
                 }
             }
 
