@@ -17,19 +17,19 @@ def call() {
 
             stage('Compile Code'){
                 steps{
-                    sh 'echo Code check'
+                    sh 'echo Compile "${COMPONENT}" Code'
                 }
             }
 
             stage('Code Chek'){
                 steps{
-                    sh 'echo Code check'
+                    sh 'echo "${COMPONENT}" Code check'
                 }
             }
 
             stage('Test Cases'){
                 steps{
-                    sh 'echo Test case'
+                    sh 'echo "${COMPONENT}" Test case'
                 }
             }
 
