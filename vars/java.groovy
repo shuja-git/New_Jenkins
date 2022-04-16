@@ -15,7 +15,10 @@ def call() {
 
             stage('Code Chek'){
                 steps{
-                    sh 'echo "${COMPONENT}" Code check'
+                    script{
+                 common.SonarQube()
+                    }
+
                 }
             }
             stage('Link Check'){
