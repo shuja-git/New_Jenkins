@@ -51,7 +51,7 @@ for(componet in COMPONENTS) {
         'scm'(class: 'hudson.plugins.git.GitSCM', plugin: 'git') {
           'userRemoteConfigs' {
             'hudson.plugins.git.UserRemoteConfig' {
-              'url'('https://github.com/shuja-git/${component}.git')
+              'url'("https://github.com/shuja-git/${component}.git")
             }
           }
           'branches' {
