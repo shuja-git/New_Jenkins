@@ -25,7 +25,7 @@ def call() {
         }
             stage('Link Check'){
                 steps{
-                    sh '/home/centos/node_modules/eslint/bin/eslint.js .'
+                    sh '/home/centos/node_modules/eslint/bin/eslint.js *.js'
                 }
             }
 
