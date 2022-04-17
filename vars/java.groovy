@@ -13,8 +13,13 @@ def call() {
                 }
             }
 
-            stage('Code Chek'){
+            stage('Check code Quality'){
+                steps {
+                    script {
+                        common.SonarQube()
+                    }
 
+                }
             }
             stage('Link Check'){
                 steps{

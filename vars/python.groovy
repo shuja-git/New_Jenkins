@@ -7,9 +7,12 @@ def call() {
 
         stages {
 
-            stage('Code Chek'){
-                steps{
-                    sh 'echo "${COMPONENT}" Code check'
+            stage('Check code Quality'){
+                steps {
+                    script {
+                        common.SonarQube()
+                    }
+
                 }
             }
             stage('Link Check'){
