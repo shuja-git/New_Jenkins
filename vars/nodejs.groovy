@@ -26,7 +26,7 @@ def call() {
             stage('Link Check'){
                 steps{
 //                    sh '/home/centos/node_modules/eslint/bin/eslint.js *.js'
-                    sh 'echo Lint checks'
+                    sh 'echo Lint checks means style of program checks'
                 }
             }
 
