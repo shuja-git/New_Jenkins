@@ -9,8 +9,9 @@ def SonarQube(){
 def publishArtifacts() {
     if (env.GIT_BRANCH == "*tag*") {
         println 'Ran on Tag'
-    } else {
-        Utils.markStageSkippedForConditional('Publish Artifacts')
     }
+//    else {
+//        Utils.markStageSkippedForConditional('Publish Artifacts')
+//    }
 
 }
