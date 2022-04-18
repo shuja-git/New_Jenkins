@@ -1,3 +1,4 @@
+import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 def SonarQube(){
     println("SonarQube Testing- ")
 
@@ -9,6 +10,7 @@ def publishArtifacts(){
     if(env.GIT_BRANCH == "*tag*")
         println( 'Ran on tag')
     else{
-        unstable('Not on tag')
+//        unstable('Not on tag')
+        Utils.markStageSkippedForConditional('Publish Artifacts')
     }
 }
