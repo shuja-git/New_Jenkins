@@ -7,11 +7,11 @@ def SonarQube(){
 //    sh 'sonar-quality-gate.sh admin:admin123 172.31.12.130 ${COMPONENT}'
 }
 def publishArtifacts() {
-    if (env.GIT_BRANCH == "*tag*")
+    if (env.GIT_BRANCH == "*tag*") {
         println('Ran on tag')
-} else {
+    } else {
 //        unstable('Not on tag')
         Utils.markStageSkippedForConditional('Publish Artifacts')
     }
-
+}
 
