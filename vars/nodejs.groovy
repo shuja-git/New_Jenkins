@@ -36,7 +36,11 @@ def call() {
                     sh 'echo "${COMPONENT}" Test case'
                 }
             }
-
+            stage('Publish Artifacts'){
+                steps{
+                    sh 'echo Publish Artifacts'
+                }
+            }
 
         }
         post {
