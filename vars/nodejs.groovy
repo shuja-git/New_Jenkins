@@ -39,6 +39,7 @@ def call() {
             stage('Publish Artifacts'){
                 steps{
                     sh 'echo Publish Artifacts'
+                    sh 'env'
                 }
             }
 
