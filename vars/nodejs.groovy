@@ -5,7 +5,7 @@
 //def warning(message) {
 //    echo "WARNING: ${message}"
 //}
-//
+// for nodejs compilation is not needed
 def call() {
 
     pipeline{
