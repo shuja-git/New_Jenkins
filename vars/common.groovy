@@ -5,3 +5,7 @@ def SonarQube(){
 //
 //    sh 'sonar-quality-gate.sh admin:admin123 172.31.12.130 ${COMPONENT}'
 }
+def publishArtifacts(){
+    if(GIT_BRANCH == "*/tags/*")
+        println( 'tag is created')
+}
