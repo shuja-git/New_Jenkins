@@ -15,7 +15,7 @@ def call() {
 
         stages {
 
-            stage('Check code Quality'){
+            stage('Checking code Quality'){
             steps {
                 script {
                     common.SonarQube()
