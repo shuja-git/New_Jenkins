@@ -39,11 +39,11 @@ def call() {
             }
             stage('Publish Artifacts'){
                 steps{
-                    sh 'echo Publish Artifacts'
-                    sh 'env'
-//                    script{
-//                        common.publishArtifacts()
-//                    }
+//                    sh 'echo Publish Artifacts'
+//                    sh 'env'
+                    script{
+                        common.publishArtifacts()
+                    }
                 }
             }
 
