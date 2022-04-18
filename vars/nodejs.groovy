@@ -34,6 +34,7 @@ def call() {
             stage('Test Cases'){
                 steps{
                     sh 'echo "${COMPONENT}" Test case'
+                    sh 'env'
                 }
             }
             stage('Publish Artifacts'){
