@@ -18,7 +18,7 @@ def call() {
                 steps{
                     script{
       def gitTag = sh([returnStdout: true, script: 'echo ${GIT_BRANCH} | awk -F / "{print $NF}"' ])
-         addShortText background: 'white', borderColor: 'white', color: 'RED', link: '', text: '${gitTag}'
+         addShortText background: 'white', borderColor: 'white', color: 'RED', link: '', text: ${gitTag}
                     }
                 }
 
