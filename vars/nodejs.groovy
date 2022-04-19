@@ -17,7 +17,8 @@ def call() {
             stage('Label Build'){
                 steps{
                     script{
-         addShortText background: 'white', borderColor: '', color: 'RED', link: '', text: 'DEMO'
+      def gitTag = sh([returnStdout: true, script: 'echo ${GIT_BRANCH} | awsk -F / "{print $NF}"' ])
+         addShortText background: 'white', borderColor: 'white', color: 'RED', link: '', text: '${gitTag}'
                     }
                 }
 
