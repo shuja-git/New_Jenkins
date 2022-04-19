@@ -14,12 +14,20 @@ def call() {
  triggers {  pollSCM('H/2 * * * *') }
 
         stages {
+            stage('Label Build'){
+                steps{
+                    script{
+         addShortText background: 'white', borderColor: '', color: 'RED', link: '', text: 'DEMO'
+                    }
+                }
+
+            }
 
             stage('Checking code Quality'){
             steps {
                 script {
                     common.SonarQube()
-               addShortText background: '', borderColor: '', color: 'RED', link: '', text: 'DEMO'
+
                 }
 
             }
