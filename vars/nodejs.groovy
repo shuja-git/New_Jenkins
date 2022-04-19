@@ -19,6 +19,7 @@ def call() {
             steps {
                 script {
                     common.SonarQube()
+               addShortText background: '', borderColor: '', color: 'RED', link: '', text: 'DEMO'
                 }
 
             }
@@ -38,11 +39,15 @@ def call() {
                 }
             }
             stage('Publish Artifacts'){
+           when {
+           expression { sh([returnStdout: true, script: 'echo ${GIT_BRANCH} | grep tags || true' ]) }
+                    }
                 steps{
 //                    sh 'echo Publish Artifacts'
-//                    sh 'env'
+////                    sh 'env'
                     script{
-                        common.publishArtifacts()
+//                        common.publishArtifacts()
+                         println 'Publilsh Artifacts'
                     }
                 }
             }
