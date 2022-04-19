@@ -18,7 +18,7 @@ def call() {
                 steps{
                     script{
       def gitTag = GIT_BRANCH.split('/').last()
-         addShortText background: 'white', borderColor: 'white', color: 'RED', link: '', text: '${gitTag}'
+         addShortText background: 'white', borderColor: 'white', color: 'RED', link: '', text: "${gitTag}"
                     }
                 }
 
