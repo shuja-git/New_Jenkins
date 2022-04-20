@@ -16,6 +16,6 @@ def publishArtifacts() {
 
 }
 def prepareArtifacts(){
-    println PROG_LANG
+    println(PROG_LANG)
 }
 //this is comment
