@@ -5,7 +5,22 @@ def call() {
 
 // triggers {  pollSCM('H/2 * * * *') }
 
+        environment {
+            PROG_LANG_NAME = "java"
+            PROG_LANG_VER  = "1.8"
+            NEXUS = credentials('NEXUS')
+        }
+
         stages {
+            stage('Label Build'){
+                steps{
+                    script{
+                        env.gitTag = GIT_BRANCH.split('/').last()
+                        addShortText background: 'white', borderColor: 'white', color: 'RED', link: '', text: "${gitTag}"
+                    }
+                }
+
+            }
 
             stage('Compile Code'){
                 steps{
@@ -32,6 +47,19 @@ def call() {
                     sh 'echo "${COMPONENT}" Test case'
                 }
             }
+
+            stage('Publish Artifacts'){
+                when {
+                    expression { sh([returnStdout: true, script: 'echo ${GIT_BRANCH} | grep tags || true' ]) }
+                }
+                steps{
+                    script{
+                        common.prepareArtifacts()
+                        common.publishArtifacts()
+                    }
+                }
+            }
+
 
 
         }
