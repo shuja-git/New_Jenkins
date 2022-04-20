@@ -58,8 +58,9 @@ def call() {
 //                    sh 'echo Publish Artifacts'
 ////                    sh 'env'
                     script{
-                        common.publishArtifacts()
                         common.prepareArtifacts()
+                        common.publishArtifacts()
+
 //                         println 'Publilsh Artifacts'
                     }
                 }
