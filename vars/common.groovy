@@ -16,9 +16,11 @@ def publishArtifacts() {
 
 }
 def prepareArtifacts(){
+    env.gitTag = GIT_BRANCH.split('/').last()
     if(PROG_LANG_NAME == "nodejs" && PROG_LANG_VER == "16"){
         sh '''
           npm install
+          zip -r ${COMPONENT}-${gitTag}.zip nod_modules server.js
           ls -ltr
         '''
     }
