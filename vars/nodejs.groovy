@@ -12,9 +12,9 @@ def call() {
         agent { label "${BUILD_LABEL}" }
 
 // triggers {  pollSCM('H/2 * * * *') }
-    environment {
-        PORG_LANG  = 'nodejs'
-    }
+        environment {
+            PROG_LANG_NAME = "nodejs"
+            }
 
         stages {
             stage('Label Build'){
