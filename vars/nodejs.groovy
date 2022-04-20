@@ -14,6 +14,7 @@ def call() {
 // triggers {  pollSCM('H/2 * * * *') }
         environment {
             PROG_LANG_NAME = "nodejs"
+            PROG_LANG_VER  = "6"
             }
 
         stages {

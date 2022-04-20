@@ -16,6 +16,11 @@ def publishArtifacts() {
 
 }
 def prepareArtifacts(){
-    println(PROG_LANG_NAME)
+    if(PROG_LANG_NAME == "nodejs" && PROG_LANG_VER == "16"){
+        sh '''
+          echo Hello
+          echo Bye
+        '''
+    }
 }
 //this is comment
