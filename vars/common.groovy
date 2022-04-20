@@ -38,5 +38,14 @@ def prepareArtifacts(){
           zip -r ${COMPONENT}-${gitTag}.zip requirements.txt *.py ${COMPONENT}.ini
         '''
     }
+    if(PROG_LANG_NAME == "golang" && PROG_LANG_VER == "1.16"){
+        sh '''
+         ls -ltr
+        go mod init dispatch
+        go get
+        go build
+        ls -ltr
+        '''
+    }
 }
 //this is comment
