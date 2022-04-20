@@ -22,11 +22,11 @@ def call() {
 
             }
 
-            stage('Compile Code'){
-                steps{
-                    sh 'mvn compile'
-                }
-            }
+//            stage('Compile Code'){
+//                steps{
+//                    sh 'mvn compile'
+//                }
+//            }
 
             stage('Check code Quality'){
                 steps {
