@@ -11,7 +11,10 @@ def call() {
     pipeline{
         agent { label "${BUILD_LABEL}" }
 
- triggers {  pollSCM('H/2 * * * *') }
+// triggers {  pollSCM('H/2 * * * *') }
+    environment {
+        PORG_LANG  = 'nodejs'
+    }
 
         stages {
             stage('Label Build'){
@@ -55,8 +58,9 @@ def call() {
 //                    sh 'echo Publish Artifacts'
 ////                    sh 'env'
                     script{
-//                        common.publishArtifacts()
-                         println 'Publilsh Artifacts'
+                        common.publishArtifacts()
+                        common.prepareArtifacts()
+//                         println 'Publilsh Artifacts'
                     }
                 }
             }
