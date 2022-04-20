@@ -21,7 +21,7 @@ def call() {
             stage('Label Build'){
                 steps{
                     script{
-      def gitTag = GIT_BRANCH.split('/').last()
+       env.gitTag = GIT_BRANCH.split('/').last()
          addShortText background: 'white', borderColor: 'white', color: 'RED', link: '', text: "${gitTag}"
                     }
                 }

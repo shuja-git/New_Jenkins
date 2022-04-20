@@ -16,7 +16,7 @@ def publishArtifacts() {
 
 }
 def prepareArtifacts(){
-    env.gitTag = GIT_BRANCH.split('/').last()
+//    env.gitTag = GIT_BRANCH.split('/').last()
     if(PROG_LANG_NAME == "nodejs" && PROG_LANG_VER == "16"){
         sh '''
           npm install
