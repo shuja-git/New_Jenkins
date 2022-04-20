@@ -18,8 +18,8 @@ def publishArtifacts() {
 def prepareArtifacts(){
     if(PROG_LANG_NAME == "nodejs" && PROG_LANG_VER == "16"){
         sh '''
-          echo Hello
-          echo Bye
+          npm install
+          ls -ltr
         '''
     }
 }
