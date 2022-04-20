@@ -46,5 +46,12 @@ def prepareArtifacts(){
        zip -r ${COMPONENT}-${gitTag}.zip ${COMPONENT}
         '''
     }
+    if(PROG_LANG_NAME == "angular" && PROG_LANG_VER == ""){
+        sh '''
+        cd static
+        zip -r ${COMPONENT}-${gitTag}.zip *
+        
+        '''
+    }
 }
 //this is comment
