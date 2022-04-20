@@ -3,7 +3,7 @@ def call() {
     pipeline{
         agent { label "${BUILD_LABEL}" }
 
- triggers {  pollSCM('H/2 * * * *') }
+// triggers {  pollSCM('H/2 * * * *') }
 
         stages {
 
